@@ -279,7 +279,6 @@ static int service_locator_send_msg(struct pd_qmi_client_data *pd)
 		if (db_rev_count != resp->db_rev_count) {
 			pr_err("Service Locator DB updated for client %s\n",
 				pd->client_name);
-			kfree(pd->domain_list);
 			pd->domain_list = NULL;
 			rc = -EAGAIN;
 			goto out;
